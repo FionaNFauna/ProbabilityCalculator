@@ -1,6 +1,7 @@
 import random
 import copy
 
+# create class Hat
 class Hat:
   def __init__(self, **kwargs):
     self.array = []
@@ -30,6 +31,8 @@ class Hat:
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   success = 0
   for x in range(num_experiments):
+    
+    #deepcopy the hat everytime so that each experiment will be new
     hat_given = copy.deepcopy(hat)
     succeeded = True
     result_of_one_exp = hat_given.draw(num_balls_drawn)
